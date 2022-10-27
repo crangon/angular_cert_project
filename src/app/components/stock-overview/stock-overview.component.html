@@ -1,0 +1,38 @@
+<div>
+  <button (click)="removeStockAction()" class="btn close" id="remove{{stockSymbol}}" title="Remove stock">X</button>
+
+  <div>
+    <h4>{{companyName}} ({{stockSymbol}})</h4>
+  </div>
+
+  <div>
+    <table>
+      <tr>
+        <td class="dataCell">
+          Change today: {{percentageChangeToday | percent : "1.1-2" | positiveSignum}}
+        </td>
+        <td class="dataCell">
+          Opening price: {{openingPrice | currency : "USD"}}
+        </td>
+        <td rowspan="2">
+          <app-direction-icon [icon]="percentageChangeToday>0 ? 'up' : (percentageChangeToday<0 ? 'down' : '')"></app-direction-icon>
+        </td>
+      </tr>
+      <tr>
+        <td class="dataCell">
+          Current price: {{currentPrice | currency : "USD"}}
+        </td>
+        <td class="dataCell">
+          High price: {{highPrice | currency : "USD"}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <button *ngIf="stockFetched" [routerLink]="'/sentiment/' + stockSymbol" class="btn" id="sentiment{{stockSymbol}}">
+      Go to sentiment details >
+    </button>
+    <div *ngFor="let msg of errorMessages" class="errorMessage">{{msg}}</div>
+  </div>
+</div>

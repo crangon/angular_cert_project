@@ -1,0 +1,7 @@
+<div class="box">
+  <app-stock-add-form (stockAdded)="trackStock($event)"></app-stock-add-form>
+</div>
+
+
+<app-stock-list [stocks]="stockList" (removeStock)="removeStock($event)"></app-stock-list>
+

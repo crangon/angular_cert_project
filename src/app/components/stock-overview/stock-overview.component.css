@@ -1,0 +1,17 @@
+button.close {
+  float: right;
+  position: relative;
+  top: 0;
+  right: 0;
+  padding: 2px;
+  line-height: 14px;
+  min-width: auto;
+}
+
+td.dataCell {
+  min-width: 15em;
+}
+
+div.errorMessage {
+  color: orangered;
+}

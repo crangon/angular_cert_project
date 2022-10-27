@@ -1,0 +1,12 @@
+div.icon {
+  font-size: 4em;
+  font-weight: bolder;
+}
+
+.up {
+  color: green;
+}
+
+.down {
+  color: red;
+}

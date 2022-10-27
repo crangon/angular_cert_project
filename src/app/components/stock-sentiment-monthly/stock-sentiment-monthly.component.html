@@ -1,0 +1,14 @@
+<div class="box">
+  <table>
+    <tr>
+      <td>
+        <div>{{monthlySentiment.month | month}}</div>
+        <div>Change: {{monthlySentiment.change  | positiveSignum}}</div>
+        <div>MSPR: {{monthlySentiment.mspr}}</div>
+      </td>
+      <td>
+        <app-direction-icon [icon]="monthlySentiment.change>0 ? 'up' : 'down'"></app-direction-icon>
+      </td>
+    </tr>
+  </table>
+</div>

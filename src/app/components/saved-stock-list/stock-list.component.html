@@ -1,0 +1,8 @@
+<div>
+  <div *ngFor="let stock of stocks; index as i" class="box">
+    <app-stock-overview [stockSymbol]="stock"
+                        [index]="i"
+                        (removeStock)="removeStockListener($event)"></app-stock-overview>
+  </div>
+</div>
+

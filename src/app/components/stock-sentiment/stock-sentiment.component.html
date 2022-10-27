@@ -1,0 +1,23 @@
+<div class="box">
+  <div>
+    <h3>{{(stock$ | async)?.description}} ({{stockSymbol}})</h3>
+
+    <div>
+      <div *ngFor="let month of (insiderSentiment$ | async)?.data" class="monthBlock">
+        <app-stock-sentiment-monthly [monthlySentiment]="month" ></app-stock-sentiment-monthly>
+      </div>
+    </div>
+  </div>
+
+  <div style="clear: both"></div>
+  <div *ngIf="availableMonths>-1 && availableMonths!=N_OF_MONTHS" class="warning">
+    Sentiment data only available for previous {{availableMonths}} of {{N_OF_MONTHS}} months
+  </div>
+</div>
+<div>
+  <button [routerLink]="'/'" class="btn back" id="backBtn">
+    &lt; Back to list of stocks
+  </button>
+</div>
+
+

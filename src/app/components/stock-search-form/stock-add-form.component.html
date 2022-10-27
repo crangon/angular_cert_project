@@ -1,0 +1,13 @@
+<div>
+  <form [formGroup]="stockForm">
+    <div>
+      <label for="stockInput">Enter a symbol of a stock to track (i.e. AAPL, TSLA, GOOGL)</label>
+    </div>
+    <div>
+      <input formControlName="stock" class="form-control" type="text" id="stockInput">
+      <button (click)="trackStock()" class="btn" id="trackBtn">
+        Track Stock
+      </button>
+    </div>
+  </form>
+</div>
